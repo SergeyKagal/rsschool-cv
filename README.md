@@ -1,2 +1,2 @@
 # rsschool-cv
-https://SergeyKagal.github.io/rsschool-cv/cv
+https://github.com/SergeyKagal/rsschool-cv/blob/rsschool-cv-html/index.html
