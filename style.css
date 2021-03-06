@@ -1,33 +1,84 @@
-html
+ *
 {
     margin: none;
-    padding: none;
-    background-color: lightgray;
+    padding: none; 
+}
+
+  body 
+{
+    background: #FFF;
+    color: #000;
+    margin: 0px;
+}
+
+.name
+{
+  font-size: 70px;
+  margin-right: 40px;
+  width: auto;
+  height: 150px;
+  float: right;
+
+  position: relative;
+}
+.beginner
+{float: right;
+position: absolute;
+font-size: 30%;
+letter-spacing: 0.36em;
+}
+
+header 
+{
+  background-color: gray;
+  color: #FFF;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-weight :1000;
+    height: 250px;
+}
+
+main
+{
+  width: 62%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 img
 {
-   margin-top: 2%;
-  margin-left: 3%;
+margin: 25px;
+ width: auto;
+ height: 80%;
 }
-ol
+
+
+h1{
+  text-align: left;
+  font-size: 2em;
+  margin: 0%;
+  padding: 0%;
+
+}
+
+
+h2{
+  font-size: 2em;  
+  margin: 0%;
+  padding: 0%;
+}
+
+ul 
 {
-   
-    margin-block-start: 0.5em;
-    margin-block-end: 0.2em;
+  
+  font-size: 2em;
 }
-.main 
+
+article
 {
-    background-color: lightgray;
-    font-size: 32px;
-    font-family: Geneva, Arial, Helvetica, sans-serif;
-    margin: none;
-    padding: none;
-    text-align: left;
-    width: 62%;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 2em;
 }
+
 .code
 {
     width: 62%;
@@ -43,4 +94,9 @@ ol
     text-align: left;
     margin-left: auto;
     margin-right: auto;
+}
+.rsLogo
+{
+  width: 10%;
+  height: 10%;
 }
