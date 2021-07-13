@@ -1,0 +1,104 @@
+ *
+{
+    margin: none;
+    padding: none; 
+}
+
+  body 
+{
+    background: #FFF;
+    color: #000;
+    margin: 0px;
+}
+
+.name
+{
+  font-size: 50px;
+  margin-right: 40px;
+  width: auto;
+  height: 150px;
+  float: right;
+
+  position: relative;
+}
+.beginner
+{float: right;
+position: absolute;
+font-size: 30%;
+letter-spacing: 0.36em;
+}
+
+header 
+{
+  align-items: center;
+
+  background-color: gray;
+  color: #FFF;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-weight :1000;
+    height: 250px;
+}
+
+main
+{
+  width: 62%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+img
+{
+margin: 25px;
+ width: auto;
+ height: 70%;
+}
+
+
+h1{
+  text-align: left;
+  font-size: 1.7em;
+  margin: 0%;
+  padding: 0%;
+
+}
+
+
+h2{
+  font-size: 1.7em;  
+  margin: 0%;
+  padding: 0%;
+}
+
+ul 
+{
+  
+  font-size: 1.7em;
+}
+
+article
+{
+  font-size: 1.7em;
+}
+
+.code
+{
+    width: 62%;
+    height: 300px;
+    padding: 2%;
+    border: 3px solid #ebdd20;
+    background: #fbfdff;
+    white-space: pre-wrap;
+    font-size: 16px;
+    font-family: Menlo,Monaco,'Consolas','Courier New',monospace;
+   
+    overflow-y: scroll;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rsLogo
+{
+  width: 10%;
+  height: 10%;
+}
