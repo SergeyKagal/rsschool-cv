@@ -1,116 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <title>SergeyKagal's CV</title>
-        <link rel="stylesheet" href="style.css">
-      </head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>SergeyKagal's CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <main>
-<header>
-    <img src="https://lh3.googleusercontent.com/a-/AOh14GhK7f-aGlDs20qM7GCfLvPb6EeWjsMRhiH_cEbfVw=s96-c-rg-br100" alt="SergeyKagal">
-    <div class="name">SERGEY KAGAL
-        <div class="beginner">BEGINNER FRONTEND DEVELOPER</div>
-    </div>    
-</header>
+    <div class="container">
+        <main>
+            <header>
+                <img src="https://lh3.googleusercontent.com/a-/AOh14GhK7f-aGlDs20qM7GCfLvPb6EeWjsMRhiH_cEbfVw=s96-c-rg-br100" alt="SergeyKagal">
+                <div class="name">SERGEY KAGAL
+                    <div class="beginner">BEGINNER FRONTEND DEVELOPER</div>
+                </div>
+            </header>
+            <hr>
 
-<h1>Contacts</h1>
-<ul> 
-    <li>Phone +375-29-363-31-10</li>
-    <li>Email: 3461995@gmail.com</li>
-</ul>
+            <h1>Contacts</h1>
+            <ul>
+                <li>Phone +375-29-363-31-10</li>
+                <li>Email: 3461995@gmail.com</li>
+            </ul>
 
-<h2>Skills</h2>
-<ul> 
-    <li>Engineering</li>
-    <li>Drafting</li>
-    <li>Structure Analysis</li>
-    <li>Construction management</li>
-    <li>Application of programming in solving engineering problems</li>
-    <li>Basic level of HTML, CSS </li>
-</ul>
-<h2>Education</h2>
-<ul>
-    <li>BNTU graduate civil engineer.</li>
-    <li>Online course SoloLearn </li>
-</ul>
+            <h2>Skills</h2>
+            <ul>
+                <li>Engineering</li>
+                <li>Drafting</li>
+                <li>Structure Analysis</li>
+                <li>Construction management</li>
+                <li>Application of programming in solving engineering problems</li>
+                <li>Basic level of HTML, CSS </li>
+            </ul>
+            <h2>Education</h2>
+            <ul>
+                <li>BNTU graduate civil engineer.</li>
+                <li>Online course SoloLearn </li>
+            </ul>
 
-<h2>Expirience</h2>
-<ul>
-    <li>This item will be filled later.</li>   
-</ul>
+            <h2>Expirience</h2>
+            <ul>
+                <li>This item will be filled later.</li>
+            </ul>
 
 
-<article><h3>English</h3>
-    Various online English tests assess my level
-    from beginner to intermediate. I translate texts using Google, I also perceive spoken language well.</article>
+            <article>
+                <h3>English</h3>
+                Various online English tests assess my level from beginner to intermediate. I translate texts using Google, I also perceive spoken language well.</article>
 
-<h2>Example of my code:</h2>
-<p class="code">
-    #include &lt;iostream&gt;
-     const int SIZE=3;
-     using namespace std;// --don't do that, it's bad practice
-     
-     struct Tquestion
-     {
-         string question;
-         string answer_option1;
-         string answer_option2;
-         string answer_option3;
-         int correct_answer;
-     };
-     
-     void List_init(Tquestion *qList)
-     {
-       qList[0]={"what is the highest mountain in the world ?","Chomolungma","Dhaulagiri I","Nanga Parbat", 1};
-       qList[1]={"who hasn't played a bond of these actors ?","Roger Moor","Martin Freeman","Timothy Dalton", 2};
-       qList[2]={"What year did Depeche Mode release the album 'Violator'","1990","1985","1983", 1};
-     }
-     void ask(Tquestion *qList, int*p)
-     {
-         int num;
-         for(int i=0; i&lt;SIZE; i++)
-         {
-             cout&lt;&lt;"\nQuestion #"&lt;&lt;i+1&lt;&lt;" \n"&lt;&lt;qList[i].question&lt;&lt;"\n\n";
-             cout&lt;&lt;"1. "&lt;&lt;qList[i].answer_option1&lt;&lt;endl;
-             cout&lt;&lt;"2. "&lt;&lt;qList[i].answer_option2&lt;&lt;endl;
-             cout&lt;&lt;"3. "&lt;&lt;qList[i].answer_option3&lt;&lt;endl;
-             cout&lt;&lt; "  Enter the number of correct answer: ";
-             cin>>num;
-                 if(num==qList[i].correct_answer)
-                 {
-                     cout&lt;&lt;"Correct\n";
-                     (*p)+=100;
-                 }
-                 else cout&lt;&lt;"Incorrect\n";
-         }
-     }
-     int main()
-     {
-         Tquestion *qList=new Tquestion[SIZE];
-         List_init(qList);
-         int SCORE=0;
-         int *pSCORE=&SCORE;
-         ask(qList,pSCORE);
-         cout&lt;&lt;"\n Your score :"&lt;&lt;SCORE;
-         delete []qList;
-         return 0;
-     }
- </p>
-</main>
-<footer>
-   
-    <a  href="https://rs.school/js/"><img class="rsLogo" src="https://rs.school/images/rs_school_js.svg" alt="rsSchool logo"></a>
-</footer>
+            <h2 class='examp'>Example of my code:</h2>
+            <pre>
+            <p class="code">
+    #include &lt; iostream&gt;
+        const int SIZE=3;
+        using namespace std;// --don't do that, it's bad practice 
+        struct Tquestion { string question;
+            string answer_option1;
+            string answer_option2;
+            string answer_option3; 
+            int correct_answer; }; 
+    void List_init(Tquestion *qList) {
+            qList[0]={"what is the highest mountain in the world ?","Chomolungma","Dhaulagiri I","Nanga Parbat", 1}; 
+            qList[1]={"who hasn't played a bond of these actors ?","Roger Moor","Martin Freeman","Timothy Dalton", 2}; 
+            qList[2]={"What year did Depeche Mode release the album 'Violator'","1990","1985","1983", 1}; }
+        void ask(Tquestion *qList, int*p) {
+            int num;
+            for(int i=0; i&lt;SIZE; i++) { 
+                cout&lt;&lt;"\nQuestion #"&lt;&lt;i+1&lt;&lt;" \n"&lt;&lt; qList[i].question&lt;&lt;"\n\n";
+                cout&lt;&lt;"1. "&lt;&lt;qList[i].answer_option1&lt;&lt;endl;
+                cout&lt;&lt;"2. "&lt;&lt;qList[i].answer_option2&lt;&lt;endl; 
+                cout&lt;&lt;"3. "&lt;&lt;qList[i].answer_option3&lt;&lt;endl; 
+                cout&lt;&lt; " Enter the number of correct answer: "; 
+                cin>>num;
+         if(num==qList[i].correct_answer) {
+                cout&lt;&lt;"Correct\n";
+            (*p)+=100; 
+        } else 
+            cout&lt;&lt;"Incorrect\n";
+        } } 
+            int main() {
+                Tquestion *qList=new Tquestion[SIZE];
+                List_init(qList);
+                int SCORE=0; 
+                int *pSCORE=&SCORE; 
+                ask(qList,pSCORE);
+        cout&lt;&lt;"\n Your score :"&lt;&lt;SCORE; 
+        delete []qList; 
+        return 0;
+        }
+            </p>
+        </pre>
+        </main>
+        <hr>
+        <footer>
+            <div class="footer-box b1">
+                <a href="https://rs.school/js/"><img class="rsLogo" src="https://rs.school/images/rs_school_js.svg" alt="rsSchool logo"></a>
+            </div>
+            <div class="footer-box b2">
+                2021
+            </div>
+            <div class="footer-box b3">
+                <a href="https://github.com/SergeyKagal"><img class="rsLogo" src="https://upload.wikimedia.org/wikipedia/commons/2/29/GitHub_logo_2013.svg" alt="Github"></a>
+            </div>
+
+
+        </footer>
+    </div>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
