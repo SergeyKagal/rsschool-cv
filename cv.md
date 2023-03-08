@@ -18,7 +18,7 @@
 - [x]  Git
 ---
 ### Code example:
-```
+```javascript
  simpleMove(from, to, dt, duration) {
     const result = [];
     let time = 0;
