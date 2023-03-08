@@ -45,3 +45,8 @@
     return result;
   }
 ```
+---
+### English:
+<p align="center">
+ <img  src="https://user-images.githubusercontent.com/78958096/223853429-2335b498-ce72-401a-ab56-ed316d9230a7.png">
+</p>
