@@ -160,6 +160,143 @@ pre {
   -webkit-overflow-scrolling: touch;
 }
 
+.myworks__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.2rem 1.8rem;
+}
+
+.myworks__list-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  transition: all 0.28s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.myworks__list-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+}
+
+.myworks__list-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.myworks__list-item-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.myworks__list-item:hover .myworks__list-item-image {
+  transform: scale(1.04);
+}
+
+.myworks__list-item-title {
+  font-size: 1.38rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 1.1rem 1.3rem 0.4rem;
+  line-height: 1.3;
+}
+
+.myworks__list-item-description {
+  font-size: 0.98rem;
+  color: #6b7280;
+  margin: 0 1.3rem 1.2rem;
+  line-height: 1.5;
+}
+
+/* Дополнительный акцент при наведении на заголовок */
+.myworks__list-item-title {
+  position: relative;
+}
+
+.myworks__list-item:hover .myworks__list-item-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 48px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Tooltip-подсказка (для scandiweb) */
+.myworks__list-item-link[title] {
+  position: relative;
+}
+
+.myworks__list-item-link[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f2937;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.86rem;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.myworks__list-item-link[title]:hover::after {
+  opacity: 1;
+}
+
+/* ────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .myworks__list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .myworks__list-item-image {
+    height: 200px;
+  }
+
+  .myworks__list-item-title {
+    font-size: 1.32rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .myworks__list-item-image {
+    height: 180px;
+  }
+
+  .myworks__list-item-title {
+    font-size: 1.24rem;
+    margin: 1rem 1.1rem 0.3rem;
+  }
+
+  .myworks__list-item-description {
+    font-size: 0.94rem;
+    margin: 0 1.1rem 1rem;
+  }
+}
+
 /* ────────────────────────────────────────
    Footer
 ───────────────────────────────────────── */
