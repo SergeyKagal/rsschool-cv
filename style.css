@@ -266,6 +266,9 @@ pre {
   color: var(--text-secondary);
   font-size: 1rem;
 }
+.myworks__list-item-link {
+  text-decoration: none;
+}
 
 /* Contacts */
 .contacts__list {
