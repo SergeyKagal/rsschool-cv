@@ -16,6 +16,9 @@
   --border: #30363d;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family:
@@ -139,6 +142,7 @@ main {
   flex-wrap: wrap;
   gap: 1rem;
   list-style: none;
+  justify-content: center;
 }
 
 .skills__list-item {
@@ -306,6 +310,7 @@ footer {
 }
 
 .footer__link {
+  width: 120px;
   color: var(--accent);
   text-decoration: none;
   margin: 0 1.5rem;
@@ -317,6 +322,7 @@ footer {
 
 .footer__logo {
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -351,5 +357,6 @@ footer {
   footer {
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
   }
 }
