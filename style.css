@@ -99,6 +99,10 @@ header {
   color: var(--accent);
   background: rgba(96, 165, 250, 0.08);
 }
+main {
+  display: flex;
+  flex-direction: column;
+}
 
 /* Sections */
 .main__section {
@@ -166,11 +170,20 @@ header {
 .section__list {
   list-style: none;
 }
+.education__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .section__list-item {
   margin-bottom: 1.2rem;
   font-size: 1.08rem;
   color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section__list-item a {
@@ -180,6 +193,11 @@ header {
 
 .section__list-item a:hover {
   text-decoration: underline;
+}
+
+.list-item__image {
+  display: block;
+  margin: 10px;
 }
 
 /* Code example (Prism уже подключён, просто улучшаем обёртку) */
