@@ -4,6 +4,15 @@
   <title>CV - Sergey Kagal</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="assets/resume.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-tsx.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -72,10 +81,79 @@
       </section>
       <section class="main__section">
         <h2 class="main__section-title">Code example</h2>
+        
+        <figure>
+  <figcaption>ConfirmPopUp.tsx — (React)</figcaption>
+  <pre><code class="language-tsx">
+import React from 'react';
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogContentText,
+  DialogActions,
+} from '@mui/material';
+import { localizationContent } from '../../localization/types';
+
+interface IConfirm {
+  isOpen: boolean;
+  isDisabled?: boolean;
+  toShowPopUp: (isShow: boolean) =&gt; void;
+  onConfirm?: () =&gt; void;
+  child?: JSX.Element;
+  description: string;
+  onCancel?: () =&gt; void;
+}
+
+const ConfirmPopUp = (props: IConfirm) =&gt; {
+  const cancelClickHandler = () =&gt; {
+    props.toShowPopUp(false);
+  };
+
+  return (
+    &lt;&gt;
+      &lt;Dialog open={props.isOpen}&gt;
+        &lt;DialogTitle color="error"&gt;{localizationContent.deletePopup.title}&lt;/DialogTitle&gt;
+        &lt;DialogContent&gt;
+          {props.child}
+          &lt;DialogContentText&gt;{props.description}&lt;/DialogContentText&gt;
+        &lt;/DialogContent&gt;
+        &lt;DialogActions sx={{ display: 'flex', justifyContent: 'center' }}&gt;
+          &lt;Button
+            variant="outlined"
+            onClick={() =&gt; {
+              if (props.onCancel) {
+                props.onCancel();
+              }
+              cancelClickHandler();
+            }}
+          &gt;
+            {localizationContent.buttons.cancel}
+          &lt;/Button&gt;
+          &lt;Button 
+            color="error" 
+            variant="contained" 
+            onClick={props.onConfirm} 
+            disabled={props.isDisabled}
+          &gt;
+            {localizationContent.buttons.delete}
+          &lt;/Button&gt;
+        &lt;/DialogActions&gt;
+      &lt;/Dialog&gt;
+    &lt;/&gt;
+  );
+};
+
+export default ConfirmPopUp;
+  </code></pre>
+</figure>
       </section>
+
       <section class="main__section">
         <h2 class="main__section-title">My works</h2>
       </section>
+      
       <section class="main__section">
         <h2 class="main__section-title">Contacts</h2>
       </section>
