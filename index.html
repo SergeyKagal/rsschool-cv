@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Sergey Kagal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/resume.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-tsx.min.js"></script>
+
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="header__logo">
+        <h1 class="header__logo-name">
+          Sergey Kagal<span class="header__logo-underline">frontender</span>
+        </h1>
+        <img class="header__logo-image" src="assets/avatar.png" alt="avatar">
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-list-item"><a href="#about">About me</a></li>
+          <li class="header__nav-list-item"><a href="#skills">Skills</a></li>
+          <li class="header__nav-list-item"><a href="#edu">Education</a></li>
+          <li class="header__nav-list-item"><a href="#code">Code example</a></li>
+          <li class="header__nav-list-item"><a href="#works">My works</a></li>
+          <li class="header__nav-list-item"><a href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="main__section" id="about">
+        <h2 class="main__section-title">About me</h2>
+        <p class="section__text text-about">
+          I'm a frontend developer. The last 2 years are
+          dedicated to studying web development and i keep improving my
+          skills. The process of developing and creating something new brings
+          me pleasure and it helps me fight alcoholism.
+        </p>
+      </section>
+      <section class="main__section" id="skills">
+        <h2 class="main__section-title">Skills</h2>
+        <ul class="section__list skills__list">
+          <li class="skills__list-item">HTML</li>
+          <li class="skills__list-item">CSS</li>
+          <li class="skills__list-item">SCSS</li>
+          <li class="skills__list-item">JavaScript</li>
+          <li class="skills__list-item">TypeScript</li>
+          <li class="skills__list-item">Webpack</li>
+          <li class="skills__list-item">Git</li>
+          <li class="skills__list-item">REST API</li>
+          <li class="skills__list-item">React</li>
+          <li class="skills__list-item">Redux</li>
+          <li class="skills__list-item">Mobx</li>
+          <li class="skills__list-item">A2 English level</li>
+        </ul>
+      </section>
+      <section class="main__section" id="edu">
+        <h2 class="main__section-title">Education</h2>
+        <ul class="section__list education__list">
+          <li class="section__list-item">BNTU graduate civil engineer</li>
+          <li class="section__list-item">
+            <a href="https://app.rs.school/certificate/biuc5zxj" target="_blank">RS School JS/FE Pre-School (Java
+              Script)</a>
+          </li>
+          <li class="section__list-item">
+            <a href="https://app.rs.school/certificate/t3e5upo0" target="_blank">RS School JavaScript/Front-end
+              2021Q3</a>
+          </li>
+          <li class="section__list-item">
+            <a href="https://app.rs.school/certificate/snpgpvng" target="_blank">RS School React 2022 Q1</a>
+          </li>
+
+          <li class="section__list-item">
+            <p class="text">English lewel</p>
+            <img class="list-item__image" src="https://user-images.githubusercontent.com/78958096/223853429-2335b498-ce72-401a-ab56-ed316d9230a7.png" alt="english lewel certificate">
+          </li>
+
+        </ul>
+      </section>
+      <section class="main__section" id="code">
+        <h2 class="main__section-title">Code example</h2>
+
+        <figure>
+          <figcaption>ConfirmPopUp.tsx — (React)</figcaption>
+          <pre><code class="language-tsx">
+import React from 'react';
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogContentText,
+  DialogActions,
+} from '@mui/material';
+import { localizationContent } from '../../localization/types';
+
+interface IConfirm {
+  isOpen: boolean;
+  isDisabled?: boolean;
+  toShowPopUp: (isShow: boolean) =&gt; void;
+  onConfirm?: () =&gt; void;
+  child?: JSX.Element;
+  description: string;
+  onCancel?: () =&gt; void;
+}
+
+const ConfirmPopUp = (props: IConfirm) =&gt; {
+  const cancelClickHandler = () =&gt; {
+    props.toShowPopUp(false);
+  };
+
+  return (
+    &lt;&gt;
+      &lt;Dialog open={props.isOpen}&gt;
+        &lt;DialogTitle color="error"&gt;{localizationContent.deletePopup.title}&lt;/DialogTitle&gt;
+        &lt;DialogContent&gt;
+          {props.child}
+          &lt;DialogContentText&gt;{props.description}&lt;/DialogContentText&gt;
+        &lt;/DialogContent&gt;
+        &lt;DialogActions sx={{ display: 'flex', justifyContent: 'center' }}&gt;
+          &lt;Button
+            variant="outlined"
+            onClick={() =&gt; {
+              if (props.onCancel) {
+                props.onCancel();
+              }
+              cancelClickHandler();
+            }}
+          &gt;
+            {localizationContent.buttons.cancel}
+          &lt;/Button&gt;
+          &lt;Button 
+            color="error" 
+            variant="contained" 
+            onClick={props.onConfirm} 
+            disabled={props.isDisabled}
+          &gt;
+            {localizationContent.buttons.delete}
+          &lt;/Button&gt;
+        &lt;/DialogActions&gt;
+      &lt;/Dialog&gt;
+    &lt;/&gt;
+  );
+};
+
+export default ConfirmPopUp;
+  </code></pre>
+        </figure>
+      </section>
+
+      <section class="main__section" id="works">
+        <h2 class="main__section-title">My works</h2>
+
+        <ul class="myworks__list">
+          <li class="myworks__list-item"> <a class="myworks__list-item-link" href="https://sergeykagal.github.io/museum/" target="_blank">
+            <h3 class="myworks__list-item-title">museum</h3>
+            <p class="myworks__list-item-description">
+              landing page (HTML CSS JS)
+            </p>
+           
+              <img class="myworks__list-item-image" src="https://raw.githubusercontent.com/SergeyKagal/zero_cv/refs/heads/main/assets/images/museum.png" alt="image_museum">
+            </a>
+          </li>
+          <li class="myworks__list-item"><a class="myworks__list-item-link" href="https://scandy.onrender.com/tech" target="_blank">
+            <h3 class="myworks__list-item-title">scandiweb test</h3>
+            <p class="myworks__list-item-description">
+              E-commerce SPA (React Mobx)
+            </p>
+            
+              <img class="myworks__list-item-image" src="https://raw.githubusercontent.com/SergeyKagal/zero_cv/refs/heads/main/assets/images/scandy.png" alt="image_scandy" title="If page not work wait few seconds and try to reload">
+            
+          </a></li>
+        </ul>
+
+      </section>
+
+      <section class="main__section" id="contacts">
+        <h2 class="main__section-title">Contacts</h2>
+
+        <ul class="contacts__list">
+          <li class="contacts__list-item phone">
+            <span class="material-icons"> phone </span><a href="tel:+37062764666" class="header__phone">+48
+              734-779-182</a>
+          </li>
+          <li class="contacts__list-item email">
+            <span class="material-icons"> mail </span><a href="mailto:3461995@gmail.com">3461995@gmail.com</a>
+          </li>
+          <li class="contacts__list-item telegramm">
+            <span class="material-icons">telegram</span>
+            <a href="https://telegram.me/Sergey_Kagal" target="_blank">@Sergey_Kagal</a>
+          </li>
+        </ul>
+
+      </section>
+    </main>
+    <footer>
+      <a href="https://github.com/SergeyKagal" class="footer__link">Sergey Kagal</a>
+      <div class="footer__logo">
+        <img src="https://raw.githubusercontent.com/rolling-scopes-school/qualifying-stage/eab122f9aba2a95a7882278ccb36375500cc64bc/tasks/cv/images/rs-school-logo.svg" alt="rs-logo" class="footer__logo-image">
+        <div class="footer__logo-text">2026</div>
+      </div>
+      <a href="https://rs.school/courses/short-track" class="footer__link">JS / Front-end Short Track Course</a>
+    </footer>
+  </div>
+
+</body></html>
